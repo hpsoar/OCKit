@@ -7,152 +7,176 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1288E90E19A9D2CF002F88B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E90D19A9D2CF002F88B3 /* Foundation.framework */; };
-		1288E91319A9D2CF002F88B3 /* OCKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1288E91219A9D2CF002F88B3 /* OCKit.h */; };
-		1288E91519A9D2CF002F88B3 /* OCKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1288E91419A9D2CF002F88B3 /* OCKit.m */; };
-		1288E91C19A9D2CF002F88B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E91B19A9D2CF002F88B3 /* XCTest.framework */; };
-		1288E91D19A9D2CF002F88B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E90D19A9D2CF002F88B3 /* Foundation.framework */; };
-		1288E91F19A9D2CF002F88B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E91E19A9D2CF002F88B3 /* UIKit.framework */; };
-		1288E92219A9D2CF002F88B3 /* libOCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E90A19A9D2CF002F88B3 /* libOCKit.a */; };
-		1288E92819A9D2CF002F88B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1288E92619A9D2CF002F88B3 /* InfoPlist.strings */; };
-		1288E92A19A9D2CF002F88B3 /* OCKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1288E92919A9D2CF002F88B3 /* OCKitTests.m */; };
+		1288E94119A9D54F002F88B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E94019A9D54F002F88B3 /* Foundation.framework */; };
+		1288E94319A9D54F002F88B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E94219A9D54F002F88B3 /* CoreGraphics.framework */; };
+		1288E94519A9D54F002F88B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E94419A9D54F002F88B3 /* UIKit.framework */; };
+		1288E94B19A9D54F002F88B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1288E94919A9D54F002F88B3 /* InfoPlist.strings */; };
+		1288E94D19A9D54F002F88B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1288E94C19A9D54F002F88B3 /* main.m */; };
+		1288E95319A9D54F002F88B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1288E95219A9D54F002F88B3 /* Images.xcassets */; };
+		1288E95A19A9D54F002F88B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E95919A9D54F002F88B3 /* XCTest.framework */; };
+		1288E95B19A9D54F002F88B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E94019A9D54F002F88B3 /* Foundation.framework */; };
+		1288E95C19A9D54F002F88B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288E94419A9D54F002F88B3 /* UIKit.framework */; };
+		1288E96419A9D54F002F88B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1288E96219A9D54F002F88B3 /* InfoPlist.strings */; };
+		1288E96619A9D54F002F88B3 /* OCKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1288E96519A9D54F002F88B3 /* OCKitTests.m */; };
+		1288E97219A9D59C002F88B3 /* Macros.m in Sources */ = {isa = PBXBuildFile; fileRef = 1288E97119A9D59C002F88B3 /* Macros.m */; };
+		1288E97519A9D5BE002F88B3 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1288E97419A9D5BE002F88B3 /* UIView+Utility.m */; };
+		12FFFDA119A9D86D004D8980 /* UIImage+BlurredFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FFFD9E19A9D86D004D8980 /* UIImage+BlurredFrame.m */; };
+		12FFFDA219A9D86D004D8980 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FFFDA019A9D86D004D8980 /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1288E92019A9D2CF002F88B3 /* PBXContainerItemProxy */ = {
+		1288E95D19A9D54F002F88B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1288E90219A9D2CF002F88B3 /* Project object */;
+			containerPortal = 1288E93519A9D54F002F88B3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1288E90919A9D2CF002F88B3;
+			remoteGlobalIDString = 1288E93C19A9D54F002F88B3;
 			remoteInfo = OCKit;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1288E90819A9D2CF002F88B3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				1288E91319A9D2CF002F88B3 /* OCKit.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		1288E90A19A9D2CF002F88B3 /* libOCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1288E90D19A9D2CF002F88B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1288E91119A9D2CF002F88B3 /* OCKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCKit-Prefix.pch"; sourceTree = "<group>"; };
-		1288E91219A9D2CF002F88B3 /* OCKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCKit.h; sourceTree = "<group>"; };
-		1288E91419A9D2CF002F88B3 /* OCKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCKit.m; sourceTree = "<group>"; };
-		1288E91A19A9D2CF002F88B3 /* OCKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1288E91B19A9D2CF002F88B3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1288E91E19A9D2CF002F88B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		1288E92519A9D2CF002F88B3 /* OCKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OCKitTests-Info.plist"; sourceTree = "<group>"; };
-		1288E92719A9D2CF002F88B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1288E92919A9D2CF002F88B3 /* OCKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCKitTests.m; sourceTree = "<group>"; };
+		1288E93D19A9D54F002F88B3 /* OCKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1288E94019A9D54F002F88B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1288E94219A9D54F002F88B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1288E94419A9D54F002F88B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1288E94819A9D54F002F88B3 /* OCKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OCKit-Info.plist"; sourceTree = "<group>"; };
+		1288E94A19A9D54F002F88B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1288E94C19A9D54F002F88B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1288E94E19A9D54F002F88B3 /* OCKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCKit-Prefix.pch"; sourceTree = "<group>"; };
+		1288E95219A9D54F002F88B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1288E95819A9D54F002F88B3 /* OCKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1288E95919A9D54F002F88B3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1288E96119A9D54F002F88B3 /* OCKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OCKitTests-Info.plist"; sourceTree = "<group>"; };
+		1288E96319A9D54F002F88B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1288E96519A9D54F002F88B3 /* OCKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCKitTests.m; sourceTree = "<group>"; };
+		1288E97019A9D59C002F88B3 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		1288E97119A9D59C002F88B3 /* Macros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Macros.m; sourceTree = "<group>"; };
+		1288E97319A9D5BE002F88B3 /* UIView+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
+		1288E97419A9D5BE002F88B3 /* UIView+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
+		12FFFD9D19A9D86D004D8980 /* UIImage+BlurredFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BlurredFrame.h"; sourceTree = "<group>"; };
+		12FFFD9E19A9D86D004D8980 /* UIImage+BlurredFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BlurredFrame.m"; sourceTree = "<group>"; };
+		12FFFD9F19A9D86D004D8980 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		12FFFDA019A9D86D004D8980 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1288E90719A9D2CF002F88B3 /* Frameworks */ = {
+		1288E93A19A9D54F002F88B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1288E90E19A9D2CF002F88B3 /* Foundation.framework in Frameworks */,
+				1288E94319A9D54F002F88B3 /* CoreGraphics.framework in Frameworks */,
+				1288E94519A9D54F002F88B3 /* UIKit.framework in Frameworks */,
+				1288E94119A9D54F002F88B3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1288E91719A9D2CF002F88B3 /* Frameworks */ = {
+		1288E95519A9D54F002F88B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1288E91C19A9D2CF002F88B3 /* XCTest.framework in Frameworks */,
-				1288E91F19A9D2CF002F88B3 /* UIKit.framework in Frameworks */,
-				1288E92219A9D2CF002F88B3 /* libOCKit.a in Frameworks */,
-				1288E91D19A9D2CF002F88B3 /* Foundation.framework in Frameworks */,
+				1288E95A19A9D54F002F88B3 /* XCTest.framework in Frameworks */,
+				1288E95C19A9D54F002F88B3 /* UIKit.framework in Frameworks */,
+				1288E95B19A9D54F002F88B3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1288E90119A9D2CF002F88B3 = {
+		1288E93419A9D54F002F88B3 = {
 			isa = PBXGroup;
 			children = (
-				1288E90F19A9D2CF002F88B3 /* OCKit */,
-				1288E92319A9D2CF002F88B3 /* OCKitTests */,
-				1288E90C19A9D2CF002F88B3 /* Frameworks */,
-				1288E90B19A9D2CF002F88B3 /* Products */,
+				1288E94619A9D54F002F88B3 /* OCKit */,
+				1288E95F19A9D54F002F88B3 /* OCKitTests */,
+				1288E93F19A9D54F002F88B3 /* Frameworks */,
+				1288E93E19A9D54F002F88B3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1288E90B19A9D2CF002F88B3 /* Products */ = {
+		1288E93E19A9D54F002F88B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1288E90A19A9D2CF002F88B3 /* libOCKit.a */,
-				1288E91A19A9D2CF002F88B3 /* OCKitTests.xctest */,
+				1288E93D19A9D54F002F88B3 /* OCKit.app */,
+				1288E95819A9D54F002F88B3 /* OCKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1288E90C19A9D2CF002F88B3 /* Frameworks */ = {
+		1288E93F19A9D54F002F88B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1288E90D19A9D2CF002F88B3 /* Foundation.framework */,
-				1288E91B19A9D2CF002F88B3 /* XCTest.framework */,
-				1288E91E19A9D2CF002F88B3 /* UIKit.framework */,
+				1288E94019A9D54F002F88B3 /* Foundation.framework */,
+				1288E94219A9D54F002F88B3 /* CoreGraphics.framework */,
+				1288E94419A9D54F002F88B3 /* UIKit.framework */,
+				1288E95919A9D54F002F88B3 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1288E90F19A9D2CF002F88B3 /* OCKit */ = {
+		1288E94619A9D54F002F88B3 /* OCKit */ = {
 			isa = PBXGroup;
 			children = (
-				1288E91219A9D2CF002F88B3 /* OCKit.h */,
-				1288E91419A9D2CF002F88B3 /* OCKit.m */,
-				1288E91019A9D2CF002F88B3 /* Supporting Files */,
+				1288E96F19A9D57F002F88B3 /* Classes */,
+				1288E95219A9D54F002F88B3 /* Images.xcassets */,
+				1288E94719A9D54F002F88B3 /* Supporting Files */,
 			);
 			path = OCKit;
 			sourceTree = "<group>";
 		};
-		1288E91019A9D2CF002F88B3 /* Supporting Files */ = {
+		1288E94719A9D54F002F88B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1288E91119A9D2CF002F88B3 /* OCKit-Prefix.pch */,
+				1288E94819A9D54F002F88B3 /* OCKit-Info.plist */,
+				1288E94919A9D54F002F88B3 /* InfoPlist.strings */,
+				1288E94C19A9D54F002F88B3 /* main.m */,
+				1288E94E19A9D54F002F88B3 /* OCKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1288E92319A9D2CF002F88B3 /* OCKitTests */ = {
+		1288E95F19A9D54F002F88B3 /* OCKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				1288E92919A9D2CF002F88B3 /* OCKitTests.m */,
-				1288E92419A9D2CF002F88B3 /* Supporting Files */,
+				1288E96519A9D54F002F88B3 /* OCKitTests.m */,
+				1288E96019A9D54F002F88B3 /* Supporting Files */,
 			);
 			path = OCKitTests;
 			sourceTree = "<group>";
 		};
-		1288E92419A9D2CF002F88B3 /* Supporting Files */ = {
+		1288E96019A9D54F002F88B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1288E92519A9D2CF002F88B3 /* OCKitTests-Info.plist */,
-				1288E92619A9D2CF002F88B3 /* InfoPlist.strings */,
+				1288E96119A9D54F002F88B3 /* OCKitTests-Info.plist */,
+				1288E96219A9D54F002F88B3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1288E96F19A9D57F002F88B3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				12FFFD9D19A9D86D004D8980 /* UIImage+BlurredFrame.h */,
+				12FFFD9E19A9D86D004D8980 /* UIImage+BlurredFrame.m */,
+				12FFFD9F19A9D86D004D8980 /* UIImage+ImageEffects.h */,
+				12FFFDA019A9D86D004D8980 /* UIImage+ImageEffects.m */,
+				1288E97019A9D59C002F88B3 /* Macros.h */,
+				1288E97119A9D59C002F88B3 /* Macros.m */,
+				1288E97319A9D5BE002F88B3 /* UIView+Utility.h */,
+				1288E97419A9D5BE002F88B3 /* UIView+Utility.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1288E90919A9D2CF002F88B3 /* OCKit */ = {
+		1288E93C19A9D54F002F88B3 /* OCKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1288E92D19A9D2CF002F88B3 /* Build configuration list for PBXNativeTarget "OCKit" */;
+			buildConfigurationList = 1288E96919A9D54F002F88B3 /* Build configuration list for PBXNativeTarget "OCKit" */;
 			buildPhases = (
-				1288E90619A9D2CF002F88B3 /* Sources */,
-				1288E90719A9D2CF002F88B3 /* Frameworks */,
-				1288E90819A9D2CF002F88B3 /* CopyFiles */,
+				1288E93919A9D54F002F88B3 /* Sources */,
+				1288E93A19A9D54F002F88B3 /* Frameworks */,
+				1288E93B19A9D54F002F88B3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -160,97 +184,123 @@
 			);
 			name = OCKit;
 			productName = OCKit;
-			productReference = 1288E90A19A9D2CF002F88B3 /* libOCKit.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 1288E93D19A9D54F002F88B3 /* OCKit.app */;
+			productType = "com.apple.product-type.application";
 		};
-		1288E91919A9D2CF002F88B3 /* OCKitTests */ = {
+		1288E95719A9D54F002F88B3 /* OCKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1288E93019A9D2CF002F88B3 /* Build configuration list for PBXNativeTarget "OCKitTests" */;
+			buildConfigurationList = 1288E96C19A9D54F002F88B3 /* Build configuration list for PBXNativeTarget "OCKitTests" */;
 			buildPhases = (
-				1288E91619A9D2CF002F88B3 /* Sources */,
-				1288E91719A9D2CF002F88B3 /* Frameworks */,
-				1288E91819A9D2CF002F88B3 /* Resources */,
+				1288E95419A9D54F002F88B3 /* Sources */,
+				1288E95519A9D54F002F88B3 /* Frameworks */,
+				1288E95619A9D54F002F88B3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1288E92119A9D2CF002F88B3 /* PBXTargetDependency */,
+				1288E95E19A9D54F002F88B3 /* PBXTargetDependency */,
 			);
 			name = OCKitTests;
 			productName = OCKitTests;
-			productReference = 1288E91A19A9D2CF002F88B3 /* OCKitTests.xctest */;
+			productReference = 1288E95819A9D54F002F88B3 /* OCKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1288E90219A9D2CF002F88B3 /* Project object */ = {
+		1288E93519A9D54F002F88B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Beacon;
+				TargetAttributes = {
+					1288E95719A9D54F002F88B3 = {
+						TestTargetID = 1288E93C19A9D54F002F88B3;
+					};
+				};
 			};
-			buildConfigurationList = 1288E90519A9D2CF002F88B3 /* Build configuration list for PBXProject "OCKit" */;
+			buildConfigurationList = 1288E93819A9D54F002F88B3 /* Build configuration list for PBXProject "OCKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1288E90119A9D2CF002F88B3;
-			productRefGroup = 1288E90B19A9D2CF002F88B3 /* Products */;
+			mainGroup = 1288E93419A9D54F002F88B3;
+			productRefGroup = 1288E93E19A9D54F002F88B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1288E90919A9D2CF002F88B3 /* OCKit */,
-				1288E91919A9D2CF002F88B3 /* OCKitTests */,
+				1288E93C19A9D54F002F88B3 /* OCKit */,
+				1288E95719A9D54F002F88B3 /* OCKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1288E91819A9D2CF002F88B3 /* Resources */ = {
+		1288E93B19A9D54F002F88B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1288E92819A9D2CF002F88B3 /* InfoPlist.strings in Resources */,
+				1288E94B19A9D54F002F88B3 /* InfoPlist.strings in Resources */,
+				1288E95319A9D54F002F88B3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1288E95619A9D54F002F88B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1288E96419A9D54F002F88B3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1288E90619A9D2CF002F88B3 /* Sources */ = {
+		1288E93919A9D54F002F88B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1288E91519A9D2CF002F88B3 /* OCKit.m in Sources */,
+				12FFFDA119A9D86D004D8980 /* UIImage+BlurredFrame.m in Sources */,
+				12FFFDA219A9D86D004D8980 /* UIImage+ImageEffects.m in Sources */,
+				1288E97219A9D59C002F88B3 /* Macros.m in Sources */,
+				1288E97519A9D5BE002F88B3 /* UIView+Utility.m in Sources */,
+				1288E94D19A9D54F002F88B3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1288E91619A9D2CF002F88B3 /* Sources */ = {
+		1288E95419A9D54F002F88B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1288E92A19A9D2CF002F88B3 /* OCKitTests.m in Sources */,
+				1288E96619A9D54F002F88B3 /* OCKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1288E92119A9D2CF002F88B3 /* PBXTargetDependency */ = {
+		1288E95E19A9D54F002F88B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1288E90919A9D2CF002F88B3 /* OCKit */;
-			targetProxy = 1288E92019A9D2CF002F88B3 /* PBXContainerItemProxy */;
+			target = 1288E93C19A9D54F002F88B3 /* OCKit */;
+			targetProxy = 1288E95D19A9D54F002F88B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1288E92619A9D2CF002F88B3 /* InfoPlist.strings */ = {
+		1288E94919A9D54F002F88B3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1288E92719A9D2CF002F88B3 /* en */,
+				1288E94A19A9D54F002F88B3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1288E96219A9D54F002F88B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1288E96319A9D54F002F88B3 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -258,7 +308,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1288E92B19A9D2CF002F88B3 /* Debug */ = {
+		1288E96719A9D54F002F88B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -274,6 +324,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -295,7 +346,7 @@
 			};
 			name = Debug;
 		};
-		1288E92C19A9D2CF002F88B3 /* Release */ = {
+		1288E96819A9D54F002F88B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -311,6 +362,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -326,33 +378,36 @@
 			};
 			name = Release;
 		};
-		1288E92E19A9D2CF002F88B3 /* Debug */ = {
+		1288E96A19A9D54F002F88B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/OCKit.dst;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCKit/OCKit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "OCKit/OCKit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		1288E92F19A9D2CF002F88B3 /* Release */ = {
+		1288E96B19A9D54F002F88B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/OCKit.dst;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCKit/OCKit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "OCKit/OCKit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		1288E93119A9D2CF002F88B3 /* Debug */ = {
+		1288E96D19A9D54F002F88B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OCKit.app/OCKit";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -366,13 +421,15 @@
 				);
 				INFOPLIST_FILE = "OCKitTests/OCKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		1288E93219A9D2CF002F88B3 /* Release */ = {
+		1288E96E19A9D54F002F88B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OCKit.app/OCKit";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -382,6 +439,7 @@
 				GCC_PREFIX_HEADER = "OCKit/OCKit-Prefix.pch";
 				INFOPLIST_FILE = "OCKitTests/OCKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -389,32 +447,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1288E90519A9D2CF002F88B3 /* Build configuration list for PBXProject "OCKit" */ = {
+		1288E93819A9D54F002F88B3 /* Build configuration list for PBXProject "OCKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1288E92B19A9D2CF002F88B3 /* Debug */,
-				1288E92C19A9D2CF002F88B3 /* Release */,
+				1288E96719A9D54F002F88B3 /* Debug */,
+				1288E96819A9D54F002F88B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1288E92D19A9D2CF002F88B3 /* Build configuration list for PBXNativeTarget "OCKit" */ = {
+		1288E96919A9D54F002F88B3 /* Build configuration list for PBXNativeTarget "OCKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1288E92E19A9D2CF002F88B3 /* Debug */,
-				1288E92F19A9D2CF002F88B3 /* Release */,
+				1288E96A19A9D54F002F88B3 /* Debug */,
+				1288E96B19A9D54F002F88B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		1288E93019A9D2CF002F88B3 /* Build configuration list for PBXNativeTarget "OCKitTests" */ = {
+		1288E96C19A9D54F002F88B3 /* Build configuration list for PBXNativeTarget "OCKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1288E93119A9D2CF002F88B3 /* Debug */,
-				1288E93219A9D2CF002F88B3 /* Release */,
+				1288E96D19A9D54F002F88B3 /* Debug */,
+				1288E96E19A9D54F002F88B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1288E90219A9D2CF002F88B3 /* Project object */;
+	rootObject = 1288E93519A9D54F002F88B3 /* Project object */;
 }
