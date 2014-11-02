@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define WEAK_VAR(v) \
 __weak typeof(v) _##v = v

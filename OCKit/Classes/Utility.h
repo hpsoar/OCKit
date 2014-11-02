@@ -10,6 +10,8 @@
 #import "Macros.h"
 #import "UIView+Utility.h"
 
+NSString *DefStr(NSString *format, ...);
+
 @interface NSDate (Utility)
 
 @property (nonatomic, readonly) NSInteger year;
@@ -37,5 +39,7 @@
 @interface Utility : NSObject
 
 + (NSString *)filepath:(NSString *)filename;
+
++ (NSString *)md5:(NSString *)password;
 
 @end

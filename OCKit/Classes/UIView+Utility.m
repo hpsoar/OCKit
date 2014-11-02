@@ -7,7 +7,7 @@
 //
 
 #import "UIView+Utility.h"
-#import <Nimbus/NIDebuggingTools.h>
+#import "NIDebuggingTools.h"
 
 @implementation UIView (Utility)
 
