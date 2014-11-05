@@ -22,7 +22,12 @@ NSString *DefStr(NSString *format, ...);
 @property (nonatomic, readonly) NSDateComponents *solarComponents;
 @property (nonatomic, readonly) NSDateComponents *lunarComponents;
 
+- (NSString *)formatWith:(NSString *)formatter;
+
++ (NSDate*)dateWithFormatter:(NSString *)formatter dateStr:(NSString *)dateStr;
+
 @end
+
 
 @interface LunarDate : NSObject
 
@@ -41,5 +46,12 @@ NSString *DefStr(NSString *format, ...);
 + (NSString *)filepath:(NSString *)filename;
 
 + (NSString *)md5:(NSString *)password;
+
+@end
+
+@interface Utility (UI)
+
++ (CGFloat)heightForText:(NSString *)text fontSize:(CGFloat)fontSize width:(CGFloat)width;
++ (CGFloat)heightForText:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
 
 @end

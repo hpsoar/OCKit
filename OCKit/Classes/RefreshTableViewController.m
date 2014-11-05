@@ -20,13 +20,15 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.title = [[UILabel alloc] initWithFrame:CGRectMake(80, 0, 200, frame.size.height)];
+        self.title = [[UILabel alloc] initWithFrame:self.bounds];
+        self.title.textAlignment = NSTextAlignmentCenter;
+        self.title.textColor = [UIColor lightGrayColor];
         [self addSubview:self.title];
         
         self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [self addSubview:self.activityIndicator];
         
-        self.activityIndicator.center = CGPointMake(20, frame.size.height / 2);
+        self.activityIndicator.center = CGPointMake(100, frame.size.height / 2);
     }
     return self;
 }
@@ -102,12 +104,11 @@
 }
 
 - (void)setFooterView:(ActivityView *)footerView {
+    _footerView = footerView;
     footerView.hidden = YES;
+    
+    // TODO: better not use footer
     self.tableView.tableFooterView = footerView;
-}
-
-- (ActivityView *)footerView {
-    return (ActivityView *)self.tableView.tableFooterView;
 }
 
 - (void)updateHeaderFrame {
@@ -115,7 +116,6 @@
     CGRect frame = CGRectMake(0, 0, 320, height);
     self.headerContainer.frame = frame;
     self.headerContainer.clipsToBounds = YES;
-    self.headerContainer.backgroundColor = [UIColor redColor];
     self.headerView.center = CGPointMake(frame.size.width / 2, frame.size.height / 2);
 }
 

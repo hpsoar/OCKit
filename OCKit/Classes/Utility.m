@@ -51,6 +51,20 @@ NSString *DefStr(NSString *format, ...) {
     return [calendar components:units fromDate:self];
 }
 
++ (NSDate*) dateWithFormatter:(NSString *)formatter dateStr:(NSString *)dateStr {
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = formatter;
+    return [dateFormatter dateFromString:dateStr];
+}
+
+// 例如: @"yyyy-MM-dd"
+//
+- (NSString *)formatWith:(NSString *)formatter {
+    NSDateFormatter* dateFormatter = [NSDateFormatter new];
+    dateFormatter.dateFormat = formatter;
+    return [dateFormatter stringFromDate:self];
+}
+
 @end
 
 @implementation LunarDate
@@ -111,6 +125,20 @@ NSString *DefStr(NSString *format, ...) {
              result[10], result[11],
              result[12 ], result[13],
              result[14 ], result[15]] lowercaseString];
+}
+
+@end
+
+@implementation Utility (UI)
+
++ (CGFloat)heightForText:(NSString *)text fontSize:(CGFloat)fontSize width:(CGFloat)width {
+    return [self heightForText:text font:[UIFont systemFontOfSize:fontSize] width:width];
+}
+
++ (CGFloat)heightForText:(NSString *)text font:(UIFont *)font width:(CGFloat)width {
+    NSDictionary *attrs = @{ NSFontAttributeName: font };
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
+    return rect.size.height;
 }
 
 @end
