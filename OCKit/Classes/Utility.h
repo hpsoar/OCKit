@@ -43,6 +43,8 @@ NSString *DefStr(NSString *format, ...);
 
 @interface Utility : NSObject
 
++ (NSString *)documentPath;
+
 + (NSString *)filepath:(NSString *)filename;
 
 + (NSString *)md5:(NSString *)password;

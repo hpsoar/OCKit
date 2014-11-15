@@ -68,13 +68,13 @@
 @end
 
 @implementation RefreshTableViewController
+@synthesize tableView = _tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.canLoadMore = YES;
     
-    CGRect frame = self.view.bounds;
-
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.extendedLayoutIncludesOpaqueBars = YES;
         self.automaticallyAdjustsScrollViewInsets = YES;
@@ -82,15 +82,21 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
-    _tableView = [[UITableView alloc] initWithFrame:frame];
     self.view.autoresizesSubviews = YES;
-    _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:_tableView];
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     self.headerContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
     [self.view addSubview:self.headerContainer];
+}
+
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    }
+    return _tableView;
 }
 
 - (void)setHeaderView:(ActivityView *)headerView {
