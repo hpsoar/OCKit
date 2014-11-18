@@ -65,6 +65,23 @@ NSString *DefStr(NSString *format, ...) {
     return [dateFormatter stringFromDate:self];
 }
 
+- (BOOL)isToday {
+    return [self compareDateOnly:[NSDate date]] == NSOrderedSame;
+}
+
+#warning test
+- (NSComparisonResult)compareDateOnly:(NSDate *)date {
+    NSInteger t0 = [self timeIntervalSince1970] / (3600 * 24);
+    NSInteger t1 = [date timeIntervalSince1970] / (3600 * 24);
+    if (t0 < t1) {
+        return NSOrderedAscending;
+    }
+    else if (t0 > t1) {
+        return NSOrderedDescending;
+    }
+    return NSOrderedSame;
+}
+
 @end
 
 @implementation LunarDate

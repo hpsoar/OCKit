@@ -24,6 +24,10 @@ NSString *DefStr(NSString *format, ...);
 
 - (NSString *)formatWith:(NSString *)formatter;
 
+- (BOOL)isToday;
+
+- (NSComparisonResult)compareDateOnly:(NSDate *)date;
+
 + (NSDate*)dateWithFormatter:(NSString *)formatter dateStr:(NSString *)dateStr;
 
 @end
