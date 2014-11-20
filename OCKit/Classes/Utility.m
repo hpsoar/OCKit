@@ -144,6 +144,41 @@ NSString *DefStr(NSString *format, ...) {
              result[14 ], result[15]] lowercaseString];
 }
 
++ (NSString*)UUID {
+    //
+    // https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUUID_Class/Reference/Reference.html
+    // NSUUID为128-bit, 全球唯一(Globally Unique Identifiers)
+    // 经过HEX编码之后变成32个字节的字符串
+    NSString *uuid;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 6.0) {
+        uuid = [[NSUUID UUID] UUIDString];
+    } else {
+        CFUUIDRef UUID = CFUUIDCreate(NULL);
+        uuid = CFBridgingRelease(CFUUIDCreateString(NULL, UUID));
+    }
+    
+    return [uuid stringByReplacingOccurrencesOfString:@"-" withString:@""];
+}
+
++ (id)userDefaultObjectForKey:(NSString *)key {
+    NSUserDefaults *info = [NSUserDefaults standardUserDefaults];
+    return [info objectForKey:key];
+}
+
++ (void)setUserDefaultObjects:(NSDictionary *)dict {
+    NSUserDefaults *info = [NSUserDefaults standardUserDefaults];
+    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [info setObject:obj forKey:key];
+    }];
+    [info synchronize];
+}
+
++ (void)removeUserDefaultObject:(NSString *)key {
+    NSUserDefaults *info = [NSUserDefaults standardUserDefaults];
+    [info removeObjectForKey:key];
+    [info synchronize];
+}
+
 @end
 
 @implementation Utility (UI)

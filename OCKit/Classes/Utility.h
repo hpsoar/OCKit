@@ -53,6 +53,12 @@ NSString *DefStr(NSString *format, ...);
 
 + (NSString *)md5:(NSString *)password;
 
++ (NSString*)UUID;
+
++ (id)userDefaultObjectForKey:(NSString *)key;
++ (void)setUserDefaultObjects:(NSDictionary *)dict;
++ (void)removeObject:(NSString *)key;
+
 @end
 
 @interface Utility (UI)
