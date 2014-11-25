@@ -20,6 +20,8 @@
 
 + (UIView *)roundViewWithDiameter:(CGFloat)diameter;
 
++ (CGFloat)width;
+
 /**
  * Shortcut for frame.origin.x.
  *

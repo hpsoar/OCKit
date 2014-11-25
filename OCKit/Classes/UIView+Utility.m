@@ -38,6 +38,14 @@
     return [self roundView:diameter / 2];
 }
 
++ (CGFloat)width {
+    CGRect bounds = [[UIScreen mainScreen] bounds]; // portrait bounds
+    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        bounds.size = CGSizeMake(bounds.size.height, bounds.size.width);
+    }
+    return bounds.size.width;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (CGFloat)left {
     return self.frame.origin.x;

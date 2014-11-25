@@ -83,7 +83,7 @@
     }
     
     self.view.autoresizesSubviews = YES;
-    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -214,6 +214,11 @@
     self.isLoadingMore = NO;
     self.footerView.hidden = YES;
     [self.footerView stopActivity];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self.tableView reloadData];
 }
 
 @end
