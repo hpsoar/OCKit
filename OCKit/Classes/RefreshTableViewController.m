@@ -155,6 +155,7 @@
     if (-scrollView.contentOffset.y < scrollView.contentInset.top) {
         [self unpinHeader];
     }
+    
     if (!self.isRefreshing && self.isDragging) {
         [self.headerView updateWithOffset:scrollView.contentOffset.y];
     }

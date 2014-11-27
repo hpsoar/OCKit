@@ -9,7 +9,7 @@
 #import "OCTableViewController.h"
 
 @interface OCTableViewController()
-
+@property (nonatomic) NSInteger page;
 @end
 
 @implementation OCTableViewController
@@ -49,36 +49,21 @@
 - (void)refresh {
     [super refresh];
     
-    [self resetModelState];
-    [self loadModel];
+    [self resetModel];
+    
+    self.page = 0;
+    
+    [self loadModelAtPage:self.page];
 }
 
 - (void)loadMore {
     [super loadMore];
-    [self loadModel];
-}
-
-- (void)loadModel {
     
+    self.page++;
+    [self loadModelAtPage:self.page];
 }
 
-- (void)resetModelState {
-    
-}
-
-- (void)reloadTableView {
-    [self.tableView reloadData];
-    [self stopRefreshing];
-}
-
-- (void)stopRefreshing {
-    if (self.isRefreshing) {
-        [self refreshCompleted];
-    }
-    
-    if (self.isLoadingMore) {
-        [self loadMoreCompleted];
-    }
+- (void)loadModelAtPage:(NSInteger)page {
     
 }
 

@@ -21,11 +21,6 @@
 
 - (void)resetModel;
 
-- (void)resetModelState;
+- (void)loadModelAtPage:(NSInteger)page;
 
-- (void)loadModel;
-
-- (void)reloadTableView;
-
-- (void)stopRefreshing;
 @end
