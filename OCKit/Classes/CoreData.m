@@ -8,10 +8,29 @@
 
 #import "CoreData.h"
 
+@interface CoreData ()
+@end
+
 @implementation CoreData
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+
+- (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL {
+    NSManagedObjectModel *model = [CoreData managedObjectModelWithName:modelName];
+    NSPersistentStoreCoordinator *coordinator = [CoreData persistentStoreCoordinatorWithStoreURL:[NSURL URLWithString:storeURL] model:model];
+    return [self initWithModel:model persistentStoreCoordinator:coordinator];
+}
+
+- (id)initWithModel:(NSManagedObjectModel *)model persistentStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    self = [super init];
+    if (self) {
+        __managedObjectModel = model;
+        __persistentStoreCoordinator = persistentStoreCoordinator;
+    }
+    
+    return self;
+}
 
 - (void)saveContext {
     NSError *error = nil;
@@ -43,30 +62,15 @@
     return __managedObjectContext;
 }
 
-// Returns the managed object model for the application.
-// If the model doesn't already exist, it is created from the application's model.
-- (NSManagedObjectModel *)managedObjectModel {
-    if (__managedObjectModel != nil) {
-        return __managedObjectModel;
-    }
-    
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"WordList" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return __managedObjectModel;
++ (NSManagedObjectModel *)managedObjectModelWithName:(NSString *)name {
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:name withExtension:@"momd"];
+    return [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 }
 
-// Returns the persistent store coordinator for the application.
-// If the coordinator doesn't already exist, it is created and the application's store added to it.
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (__persistentStoreCoordinator != nil) {
-        return __persistentStoreCoordinator;
-    }
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"wordlist.sqlite"];
-    
++ (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStoreURL:(NSURL *)storeURL model:(NSManagedObjectModel *)model {
     NSError *error = nil;
-    __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -93,6 +97,17 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    return persistentStoreCoordinator;
+}
+
+// Returns the persistent store coordinator for the application.
+// If the coordinator doesn't already exist, it is created and the application's store added to it.
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if (__persistentStoreCoordinator != nil) {
+        return __persistentStoreCoordinator;
+    }
+    
+   
     
     return __persistentStoreCoordinator;
 }
