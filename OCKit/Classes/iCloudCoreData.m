@@ -12,7 +12,7 @@
 
 - (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL {
     NSManagedObjectModel *model = [CoreData managedObjectModelWithName:modelName];
-    UbiquityStoreManager *ubiquityStoreManager = [[UbiquityStoreManager alloc] initWithManagedObjectModel:model localStoreURL:[NSURL URLWithString:storeURL] containerIdentifier:nil additionalStoreOptions:nil];
+    UbiquityStoreManager *ubiquityStoreManager = [[UbiquityStoreManager alloc] initWithManagedObjectModel:model localStoreURL:[NSURL fileURLWithPath:storeURL isDirectory:NO] containerIdentifier:nil additionalStoreOptions:nil];
     return [self initWithUbiquityStoreManager:ubiquityStoreManager];
 }
 
