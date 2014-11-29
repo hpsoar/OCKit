@@ -17,8 +17,13 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 - (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL {
+    return [self initWithModelName:modelName storeURL:storeURL ubiquitousContentName:nil];
+}
+
+- (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL ubiquitousContentName:(NSString *)ubiquitousContentName {
+    storeURL = [Utility filepath:storeURL];
     NSManagedObjectModel *model = [CoreData managedObjectModelWithName:modelName];
-    NSPersistentStoreCoordinator *coordinator = [CoreData persistentStoreCoordinatorWithStoreURL:[NSURL URLWithString:storeURL] model:model];
+    NSPersistentStoreCoordinator *coordinator = [CoreData persistentStoreCoordinatorWithStoreURL:[NSURL fileURLWithPath:storeURL isDirectory:NO] model:model ubiquitousContentName:ubiquitousContentName];
     return [self initWithModel:model persistentStoreCoordinator:coordinator];
 }
 
@@ -56,7 +61,8 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        __managedObjectContext = [[NSManagedObjectContext alloc] init];
+        __managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        __managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
         [__managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return __managedObjectContext;
@@ -67,10 +73,14 @@
     return [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 }
 
-+ (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStoreURL:(NSURL *)storeURL model:(NSManagedObjectModel *)model {
++ (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStoreURL:(NSURL *)storeURL model:(NSManagedObjectModel *)model ubiquitousContentName:(NSString *)ubiquitousContentName {
     NSError *error = nil;
     NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    NSDictionary *options;
+    if (ubiquitousContentName) {
+        options = @{ NSPersistentStoreUbiquitousContentNameKey: ubiquitousContentName };
+    }
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          

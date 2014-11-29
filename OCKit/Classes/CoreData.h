@@ -19,6 +19,8 @@
 
 - (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL;
 
+- (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL ubiquitousContentName:(NSString *)ubiquitousContentName;
+
 - (id)initWithModel:(NSManagedObjectModel *)model persistentStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 
 - (void)saveContext;
