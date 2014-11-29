@@ -21,19 +21,12 @@
 }
 
 - (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL ubiquitousContentName:(NSString *)ubiquitousContentName {
-    storeURL = [Utility filepath:storeURL];
-    NSManagedObjectModel *model = [CoreData managedObjectModelWithName:modelName];
-    NSPersistentStoreCoordinator *coordinator = [CoreData persistentStoreCoordinatorWithStoreURL:[NSURL fileURLWithPath:storeURL isDirectory:NO] model:model ubiquitousContentName:ubiquitousContentName];
-    return [self initWithModel:model persistentStoreCoordinator:coordinator];
-}
-
-- (id)initWithModel:(NSManagedObjectModel *)model persistentStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     self = [super init];
     if (self) {
-        __managedObjectModel = model;
-        __persistentStoreCoordinator = persistentStoreCoordinator;
+        storeURL = [Utility filepath:storeURL];
+        __managedObjectModel = [self managedObjectModelWithName:modelName];
+        __persistentStoreCoordinator = [self persistentStoreCoordinatorWithStoreURL:[NSURL fileURLWithPath:storeURL isDirectory:NO] model:__managedObjectModel ubiquitousContentName:ubiquitousContentName];
     }
-    
     return self;
 }
 
@@ -68,18 +61,19 @@
     return __managedObjectContext;
 }
 
-+ (NSManagedObjectModel *)managedObjectModelWithName:(NSString *)name {
+- (NSManagedObjectModel *)managedObjectModelWithName:(NSString *)name {
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:name withExtension:@"momd"];
     return [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 }
 
-+ (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStoreURL:(NSURL *)storeURL model:(NSManagedObjectModel *)model ubiquitousContentName:(NSString *)ubiquitousContentName {
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStoreURL:(NSURL *)storeURL model:(NSManagedObjectModel *)model ubiquitousContentName:(NSString *)ubiquitousContentName {
     NSError *error = nil;
     NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
     NSDictionary *options;
     if (ubiquitousContentName) {
         options = @{ NSPersistentStoreUbiquitousContentNameKey: ubiquitousContentName };
     }
+    [self registeriCloudNotificationsForPersistentStoreCoordinator:persistentStoreCoordinator];
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
@@ -110,9 +104,55 @@
     return persistentStoreCoordinator;
 }
 
-// Returns the URL to the application's Documents directory.
-- (NSURL *)applicationDocumentsDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+- (void)registeriCloudNotificationsForPersistentStoreCoordinator:(NSPersistentStoreCoordinator *)psc {
+    NSNotificationCenter *dc = [NSNotificationCenter defaultCenter];
+    [dc addObserver:self
+           selector:@selector(persistentStoreDidImportUbiquitousContentChanges:)
+               name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
+             object:psc];
+    
+    [dc addObserver:self
+           selector:@selector(storesWillChange:)
+               name:NSPersistentStoreCoordinatorStoresWillChangeNotification
+             object:psc];
+    
+    [dc addObserver:self
+           selector:@selector(storesDidChange:)
+               name:NSPersistentStoreCoordinatorStoresDidChangeNotification
+             object:psc];
+}
+
+- (void)persistentStoreDidImportUbiquitousContentChanges:(NSNotification *)notification {
+    NSManagedObjectContext *moc = self.managedObjectContext;
+    [moc performBlock:^{
+        [moc mergeChangesFromContextDidSaveNotification:notification];
+        
+        // you may want to post a notification here so that which ever part of your app
+        // needs to can react appropriately to what was merged.
+        // An exmaple of how to iterate over what was merged follows, although I wouldn't
+        // recommend doing it here. Better handle it in a delegate or use notifications.
+        // Note that the notification contains NSManagedObjectIDs
+        // and not NSManagedObjects.
+        NSDictionary *changes = notification.userInfo;
+        NSMutableSet *allChanges = [NSMutableSet new];
+        [allChanges unionSet:changes[NSInsertedObjectsKey]];
+        [allChanges unionSet:changes[NSUpdatedObjectsKey]];
+        [allChanges unionSet:changes[NSDeletedObjectsKey]];
+        
+        for (NSManagedObjectID *objID in allChanges) {
+            // do whatever you need to with the NSManagedObjectID
+            // you can retrieve the object from with [moc objectWithID:objID]
+            NSLog(@"object: %@",[moc objectWithID:objID]);
+        }
+    }];
+}
+
+- (void)storesDidChange:(NSNotification *)notification {
+    NIDPRINT(@"%@", notification.userInfo);
+}
+
+- (void)storesWillChange:(NSNotification *)notification {
+    NIDPRINT(@"%@", notification.userInfo);
 }
 
 #pragma mark -

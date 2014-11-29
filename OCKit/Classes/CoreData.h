@@ -15,16 +15,11 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-+ (NSManagedObjectModel *)managedObjectModelWithName:(NSString *)name;
-
 - (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL;
 
 - (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL ubiquitousContentName:(NSString *)ubiquitousContentName;
 
-- (id)initWithModel:(NSManagedObjectModel *)model persistentStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator;
-
 - (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
 
 - (id)insertObjectForEntityWithName:(NSString *)name;
 - (void)deleteObject:(id)object;
