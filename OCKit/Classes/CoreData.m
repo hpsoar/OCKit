@@ -23,8 +23,9 @@
 - (id)initWithModelName:(NSString *)modelName storeURL:(NSString *)storeURL ubiquitousContentName:(NSString *)ubiquitousContentName {
     self = [super init];
     if (self) {
-        storeURL = [Utility filepath:storeURL];
         __managedObjectModel = [self managedObjectModelWithName:modelName];
+        
+        storeURL = [Utility filepath:storeURL];
         __persistentStoreCoordinator = [self persistentStoreCoordinatorWithStoreURL:[NSURL fileURLWithPath:storeURL isDirectory:NO] model:__managedObjectModel ubiquitousContentName:ubiquitousContentName];
     }
     return self;
