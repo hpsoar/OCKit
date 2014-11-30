@@ -67,3 +67,13 @@ NSString *DefStr(NSString *format, ...);
 + (CGFloat)heightForText:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
 
 @end
+
+@interface NSNumber (Arithmetic)
+
+- (NSNumber *)addInt:(NSInteger)value;
+
+- (NSNumber *)addFloat:(CGFloat)value;
+
+- (NSNumber *)addDouble:(double)value;
+
+@end

@@ -171,18 +171,22 @@
     [self.managedObjectContext deleteObject:object];
 }
 
-- (NSArray *)queryFromEntityWithName:(NSString *)name withPredicate:(NSPredicate *)predicate {
-    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:name];
-    [fetch setPredicate:predicate];
-    
+- (NSArray *)execute:(NSFetchRequest *)fetchRequest {
     NSError *error = nil;
-    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
+    NSArray *results = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
     if (error) {
+        NIDPRINT(@"%@", error);
         return nil;
     }
     else {
         return results;
     }
+}
+
+- (NSArray *)queryFromEntityWithName:(NSString *)name withPredicate:(NSPredicate *)predicate {
+    NSFetchRequest *fetch = [self fetchRequestForEntity:name predicate:predicate sortDescriptor:nil batchSize:0];
+    
+    return [self execute:fetch];
 }
 
 - (id)queryOneFromEntityWithName:(NSString *)name withPredicate:(NSPredicate *)predicate {
@@ -195,7 +199,7 @@
 
 - (NSFetchRequest *)fetchRequestForEntity:(NSString *)entityName predicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor*)sortDescriptor batchSize:(NSInteger)batchSize {
     NSArray *sorters = sortDescriptor == nil ? nil : @[ sortDescriptor ];
-    return [self fetchRequestForEntity:entityName predicate:predicate sortDescriptors:sorters batchSize:20];
+    return [self fetchRequestForEntity:entityName predicate:predicate sortDescriptors:sorters batchSize:batchSize];
 }
 
 - (NSFetchRequest *)fetchRequestForEntity:(NSString *)entityName predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors batchSize:(NSInteger)batchSize {
@@ -206,7 +210,9 @@
     
     [fetchRequest setPredicate:predicate];
     
-    [fetchRequest setFetchBatchSize:batchSize];
+    if (batchSize > 0) {
+        [fetchRequest setFetchBatchSize:batchSize];
+    }
     
     return fetchRequest;
 }

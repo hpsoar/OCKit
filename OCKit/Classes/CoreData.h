@@ -28,6 +28,8 @@
 
 - (id)queryOneFromEntityWithName:(NSString *)name withPredicate:(NSPredicate *)predicate;
 
+- (NSArray *)execute:(NSFetchRequest *)fetchRequest;
+
 - (NSArray *)queryFromEntityWithName:(NSString *)name withPredicate:(NSPredicate *)predicate;
 
 - (NSFetchRequest *)fetchRequestForEntity:(NSString *)entityName predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors batchSize:(NSInteger)batchSize;

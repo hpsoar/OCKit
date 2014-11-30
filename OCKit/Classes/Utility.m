@@ -194,3 +194,19 @@ NSString *DefStr(NSString *format, ...) {
 }
 
 @end
+
+@implementation NSNumber (Arithmetic)
+
+- (NSNumber *)addInt:(NSInteger)value {
+    return @([self integerValue] + value);
+}
+
+- (NSNumber *)addFloat:(CGFloat)value {
+    return @([self floatValue] + value);
+}
+
+- (NSNumber *)addDouble:(double)value {
+    return @([self doubleValue] + value);
+}
+
+@end
