@@ -19,11 +19,11 @@
     self.navigationController.navigationBar.topItem.title = @"";
     
     if (self.allowDragRefresh) {
-        self.headerView = [[ActivityView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        self.headerView = [[ActivityView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)];
     }
     
     if (self.allowLoadMore) {
-        self.footerView = [[ActivityView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        self.footerView = [[ActivityView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)];
     }
     
     _cellFactory = [NICellFactory new];

@@ -28,7 +28,7 @@
         self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [self addSubview:self.activityIndicator];
         
-        self.activityIndicator.center = CGPointMake(100, frame.size.height / 2);
+        self.activityIndicator.center = CGPointMake(self.width / 2 - 60, frame.size.height / 2);
     }
     return self;
 }
@@ -88,7 +88,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    self.headerContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 320, 0)];
+    self.headerContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 0)];
     [self.view addSubview:self.headerContainer];
 }
 
@@ -119,7 +119,7 @@
 
 - (void)updateHeaderFrame {
     CGFloat height = MAX(0, -self.tableView.contentOffset.y);
-    CGRect frame = CGRectMake(0, 0, 320, height);
+    CGRect frame = CGRectMake(0, 0, self.view.width, height);
     self.headerContainer.frame = frame;
     self.headerContainer.clipsToBounds = YES;
     self.headerView.center = CGPointMake(frame.size.width / 2, frame.size.height / 2);
