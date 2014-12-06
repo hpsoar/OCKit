@@ -25,25 +25,6 @@
     if (self.allowLoadMore) {
         self.footerView = [[ActivityView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)];
     }
-    
-    _cellFactory = [NICellFactory new];
-    
-    _actions = [[NITableViewActions alloc] initWithTarget:self];
-    
-    [self.actions forwardingTo:self];
-    
-    self.tableView.delegate = self.actions;
-    
-    [self resetModel];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.cellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.model];
-}
-
-- (void)resetModel {
-    _model = [[NIMutableTableViewModel alloc] initWithDelegate:self.cellFactory];
-    self.tableView.dataSource = self.model;
 }
 
 - (void)refresh {

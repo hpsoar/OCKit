@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OCViewController.h"
 
 @interface ActivityView : UIView
 
@@ -19,9 +20,13 @@
 
 - (void)stopActivity;
 
+@property (nonatomic, strong) NSString *pullHint;
+@property (nonatomic, strong) NSString *releaseHint;
+@property (nonatomic, strong) NSString *loadingHint;
+
 @end
 
-@interface RefreshTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RefreshTableViewController : OCViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) ActivityView *headerView;
 @property (nonatomic, strong) ActivityView *footerView;

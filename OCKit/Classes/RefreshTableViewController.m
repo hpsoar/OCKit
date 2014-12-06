@@ -29,16 +29,20 @@
         [self addSubview:self.activityIndicator];
         
         self.activityIndicator.center = CGPointMake(self.width / 2 - 60, frame.size.height / 2);
+        
+        self.releaseHint = @"Release to refresh...";
+        self.pullHint = @"Pull down to refresh...";
+        self.loadingHint = @"Loading...";
     }
     return self;
 }
 
 - (void)updateWithOffset:(CGFloat)offset {
     if (-offset < self.frame.size.height) {
-        self.title.text = @"Pull down to refresh...";
+        self.title.text = self.pullHint;
     }
     else {
-        self.title.text = @"Release to refresh...";
+        self.title.text = self.releaseHint;
     }
 }
 
@@ -51,7 +55,7 @@
 }
 
 - (void)startActivity {
-    self.title.text = @"Loading...";
+    self.title.text = self.loadingHint;
     [self.activityIndicator startAnimating];
 }
 
@@ -73,14 +77,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor clearColor];
     self.canLoadMore = YES;
-    
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        self.extendedLayoutIncludesOpaqueBars = YES;
-        self.automaticallyAdjustsScrollViewInsets = YES;
-        // http://blog.jaredsinclair.com/post/61507315630/wrestling-with-status-bars-and-navigation-bars-on-ios-7
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
     
     self.view.autoresizesSubviews = YES;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -95,6 +93,7 @@
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _tableView.backgroundColor = [UIColor clearColor];
     }
     return _tableView;
 }
