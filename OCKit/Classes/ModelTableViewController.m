@@ -20,6 +20,8 @@
     [self.actions forwardingTo:self];
     
     self.tableView.delegate = self.actions;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
